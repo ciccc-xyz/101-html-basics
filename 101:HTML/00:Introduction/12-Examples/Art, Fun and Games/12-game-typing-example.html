@@ -1,0 +1,87 @@
+<!-- ----------------------------------
+     Author: Ivan Malone
+     Company: Wsad.io Technologies Inc
+     Email: ivan.m@wsad.io
+     ---------------------------------
+     Topic: HTML
+     Level: Beginner
+     ---------------------------------
+
+     Description:    
+     Example HTML Game - Typing Test
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Typing Speed Test</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<h1>Typing Speed Test</h1>
+	<p>Type as many words or sentences as you can in 30 seconds!</p>
+	<button onclick="startTest()">Start</button>
+	<p id="text"></p>
+	<input type="text" id="input" disabled>
+	<p id="results"></p>
+	<script>
+		var words = [
+			"The quick brown fox jumps over the lazy dog",
+			"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae"
+		];
+
+		var timer;
+		var elapsedTime = 0;
+		var wordCount = 0;
+
+		function startTest() {
+			// Disable start button
+			document.querySelector('button').disabled = true;
+
+			// Display random text
+			var text = document.getElementById('text');
+			var randomIndex = Math.floor(Math.random() * words.length);
+			text.innerHTML = words[randomIndex];
+
+			// Enable input field and set focus
+			var input = document.getElementById('input');
+			input.disabled = false;
+			input.value = '';
+			input.focus();
+
+			// Start timer
+			elapsedTime = 0;
+			wordCount = 0;
+			timer = setInterval(updateTimer, 1000);
+		}
+
+		function updateTimer() {
+			elapsedTime++;
+
+			if (elapsedTime == 30) {
+				// Stop timer
+				clearInterval(timer);
+
+				// Disable input field and calculate results
+				var input = document.getElementById('input');
+				input.disabled = true;
+				var typedText = input.value;
+				var typedWords = typedText.trim().split(' ');
+				wordCount = typedWords.length;
+
+				// Display results
+				var results = document.getElementById('results');
+				results.innerHTML = 'You typed ' + wordCount + ' words in 30 seconds!';
+
+				// Enable start button
+				document.querySelector('button').disabled = false;
+			}
+		}
+	</script>
+</body>
+</html>

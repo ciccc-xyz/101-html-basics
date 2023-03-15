@@ -1,0 +1,53 @@
+<!-- ----------------------------------
+     Author: Ivan Malone
+     Company: Wsad.io Technologies Inc
+     Email: ivan.m@wsad.io
+     ---------------------------------
+     Topic: HTML
+     Level: Beginner
+     ---------------------------------
+
+     Description:    
+     Basic Document Editor Example      
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document Editor</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		textarea {
+			width: 100%;
+			height: 500px;
+			font-size: 1.2em;
+			padding: 10px;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<textarea id="editor"></textarea>
+	<script>
+		// Get the editor element
+		let editor = document.getElementById("editor");
+
+		// Load the initial document content
+		editor.value = "This is a document.\n\nYou can type anything you want here.";
+
+		// Save the document content to localStorage on change
+		editor.addEventListener("input", function() {
+			localStorage.setItem("document", editor.value);
+		});
+
+		// Load the document content from localStorage on page load
+		window.addEventListener("load", function() {
+			if (localStorage.getItem("document")) {
+				editor.value = localStorage.getItem("document");
+			}
+		});
+	</script>
+</body>
+</html>

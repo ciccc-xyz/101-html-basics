@@ -1,0 +1,83 @@
+<!-- ----------------------------------
+     Author: Ivan Malone
+     Company: Wsad.io Technologies Inc
+     Email: ivan.m@wsad.io
+     ---------------------------------
+     Topic: HTML
+     Level: Beginner
+     ---------------------------------
+
+     Description:    
+     Basic Calculator Layout Example        
+-->
+
+<!DOCTYPE html> <!-- define as html document -->
+<html> <!-- define html rool element -->
+<head> <!-- define as  document head -->
+	<title>Calculator</title> <!-- give page a title -->
+</head> <!-- close head element -->
+<body> <!-- start body element -->
+	
+    <div> <!-- group this with id result -->
+        
+        <!-- input box for calculator result -->
+		<input type="text" id="result" name="result" value="">
+	</div> <!-- close the div group -->
+
+	<div> <!-- begin another -->
+        <!-- Buttons 7,8,9 -->
+		<button type="button" onclick="updateResult(7)">7</button>
+		<button type="button" onclick="updateResult(8)">8</button>
+		<button type="button" onclick="updateResult(9)">9</button>
+        <!-- Button Addition -->
+		<button type="button" onclick="updateResult('+')">+</button>
+	</div>
+
+	<div><!-- begin another -->
+        <!-- Buttons 4,5,6 -->
+		<button type="button" onclick="updateResult(4)">4</button>
+		<button type="button" onclick="updateResult(5)">5</button>
+		<button type="button" onclick="updateResult(6)">6</button>
+        <!-- Button Subtraction -->
+		<button type="button" onclick="updateResult('-')">-</button>
+	</div>
+	<div> <!-- and again... the same pattern -->
+		<button type="button" onclick="updateResult(1)">1</button>
+		<button type="button" onclick="updateResult(2)">2</button>
+		<button type="button" onclick="updateResult(3)">3</button>
+		<button type="button" onclick="updateResult('*')">*</button>
+	</div>
+	<div> <!-- and again, once more -->
+		<button type="button" onclick="updateResult(0)">0</button>
+		<button type="button" onclick="updateResult('/')">/</button>
+		<button type="button" onclick="clearResult()">C</button>
+		<button type="button" onclick="calculate()">=</button>
+	</div>
+
+    <!-- this is Java Script Code!, notice how these names are mentioned above!-->
+	<script>
+
+        // Update Result is called by which button above?
+		function updateResult(val) 
+            {
+            // get the element who's id is 'result', look at it's value and increment it by whatever is in val
+			document.getElementById('result').value += val;
+		    }
+        // Clear Result is called by which button above?
+		function clearResult() 
+            {
+            // get the element who's id is 'result', look at it's value and make it equal to an empty string of text ''
+			document.getElementById('result').value = '';
+		    }
+        // We pass the data onto javascripts 'evaluate' methods to get the result
+		function calculate() 
+            {
+            // get the element who's id is 'result', look at it's value and give it to eval, then place the result in 'result'
+			var result = eval(document.getElementById('result').value);
+            // get the element who's id is 'result', look at it's value and place 'result' inside of it
+			document.getElementById('result').value = result;
+		    }
+	</script> <!-- End the Javascript code-->
+    
+</body> <!-- end the body element -->
+</html> <!-- end the html document -->

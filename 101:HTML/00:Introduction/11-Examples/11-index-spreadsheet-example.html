@@ -1,0 +1,72 @@
+<!-- ----------------------------------
+     Author: Ivan Malone
+     Company: Wsad.io Technologies Inc
+     Email: ivan.m@wsad.io
+     ---------------------------------
+     Topic: HTML
+     Level: Beginner
+     ---------------------------------
+
+     Description:    
+     Spreadsheet Example Code
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Spreadsheet Demo</title>
+	<style>
+		/* Set the table to collapse borders */
+		table {
+			border-collapse: collapse;
+		}
+		/* Set the cell borders, padding, and font */
+		th, td {
+			border: 1px solid black;
+			padding: 5px;
+			text-align: center;
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+		}
+		/* Set the background color of the headers */
+		th {
+			background-color: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<!-- Create the column headers -->
+			<tr>
+				<th></th>
+				<th>A</th>
+				<th>B</th>
+				<th>C</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- Create the rows of data -->
+			<tr>
+				<!-- Create the row headers -->
+				<th>1</th>
+				<!-- Create the data cells with the ability to be edited -->
+				<td contenteditable="true">1A</td>
+				<td contenteditable="true">1B</td>
+				<td contenteditable="true">1C</td>
+			</tr>
+			<tr>
+				<th>2</th>
+				<td contenteditable="true">2A</td>
+				<td contenteditable="true">2B</td>
+				<td contenteditable="true">2C</td>
+			</tr>
+			<tr>
+				<th>3</th>
+				<td contenteditable="true">3A</td>
+				<td contenteditable="true">3B</td>
+				<td contenteditable="true">3C</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

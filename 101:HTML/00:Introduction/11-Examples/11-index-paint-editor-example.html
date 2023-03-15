@@ -1,0 +1,66 @@
+<!-- ----------------------------------
+     Author: Ivan Malone
+     Company: Wsad.io Technologies Inc
+     Email: ivan.m@wsad.io
+     ---------------------------------
+     Topic: HTML
+     Level: Beginner
+     ---------------------------------
+
+     Description:    
+     Basic Paint Example
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Title of the page -->
+    <title>Basic Paint Editor</title>
+  </head>
+  <body>
+    <!-- Create a canvas element to draw on -->
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <script>
+      // Get the canvas element and its context
+      var canvas = document.getElementById('canvas');
+      var ctx = canvas.getContext('2d');
+      // Set the initial state of the painting variable
+      var painting = false;
+
+      // Add event listeners for mouse down, mouse up, and mouse move
+      canvas.addEventListener('mousedown', startPainting);
+      canvas.addEventListener('mouseup', stopPainting);
+      canvas.addEventListener('mousemove', draw);
+
+      // Function to start painting when the mouse is clicked down
+      function startPainting(event) {
+        painting = true;
+        draw(event);
+      }
+
+      // Function to stop painting when the mouse is released
+      function stopPainting() {
+        painting = false;
+        ctx.beginPath();
+      }
+
+      // Function to draw on the canvas as the mouse moves
+      function draw(event) {
+        // If painting is false, do nothing
+        if (!painting) {
+          return;
+        }
+        // Set the line width and line cap for the brush
+        ctx.lineWidth = 5;
+        ctx.lineCap = 'round';
+
+        // Draw a line from the previous point to the current point
+        ctx.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+        ctx.stroke();
+        ctx.beginPath();
+        // Move the starting point to the current point
+        ctx.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+      }
+    </script>
+  </body>
+</html>

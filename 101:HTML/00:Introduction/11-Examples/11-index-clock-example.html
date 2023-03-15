@@ -1,0 +1,46 @@
+<!-- ----------------------------------
+     Author: Ivan Malone
+     Company: Wsad.io Technologies Inc
+     Email: ivan.m@wsad.io
+     ---------------------------------
+     Topic: HTML
+     Level: Beginner
+     ---------------------------------
+
+     Description:    
+     Basic Clock Basic Example        
+-->
+<!-- This section contains author, company, email, and topic information -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clock</title>
+	<!-- CSS styles for the body element -->
+	<style>
+		body {
+			text-align: center; /* center-align the text */
+			font-family: Arial, sans-serif; /* set the font family to Arial with a fallback of sans-serif */
+			font-size: 2em; /* set the font size to 2em */
+		}
+	</style>
+</head>
+<body>
+	<!-- This div element will display the time -->
+	<div id="clock"></div>
+	<script>
+		// This function updates the clock with the current time
+		function updateClock() {
+			let now = new Date(); // create a new Date object with the current date and time
+			let hour = now.getHours(); // get the current hour (0-23)
+			let minute = now.getMinutes(); // get the current minute (0-59)
+			let second = now.getSeconds(); // get the current second (0-59)
+			hour = (hour < 10) ? "0" + hour : hour; // if the hour is less than 10, add a leading zero
+			minute = (minute < 10) ? "0" + minute : minute; // if the minute is less than 10, add a leading zero
+			second = (second < 10) ? "0" + second : second; // if the second is less than 10, add a leading zero
+			let time = hour + ":" + minute + ":" + second; // combine the hour, minute, and second into a string
+			document.getElementById("clock").innerHTML = time; // set the text of the clock div to the current time
+		}
+		setInterval(updateClock, 1000); // call the updateClock function every 1000ms (1 second)
+	</script>
+</body>
+</html>

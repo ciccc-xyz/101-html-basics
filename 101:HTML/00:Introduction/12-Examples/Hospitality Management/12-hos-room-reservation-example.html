@@ -1,0 +1,43 @@
+<!-- ----------------------------------
+     Author: Ivan Malone
+     Company: Wsad.io Technologies Inc
+     Email: ivan.m@wsad.io
+     ---------------------------------
+     Topic: HTML
+     Level: Beginner
+     ---------------------------------
+
+     Description:    
+     Example Real World HTML Layout
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Acme Hotel Reservation</title>
+</head>
+<body>
+	<header>
+		<h1>Acme Hotel Reservation</h1>
+	</header>
+	<main>
+		<h2>Reservation Form</h2>
+		<form>
+			<label for="checkin">Check-in Date:</label>
+			<input type="date" name="checkin" id="checkin">
+			<label for="checkout">Check-out Date:</label>
+			<input type="date" name="checkout" id="checkout">
+			<label for="roomtype">Room Type:</label>
+			<select name="roomtype" id="roomtype">
+				<option value="standard">Standard Room</option>
+				<option value="deluxe">Deluxe Room</option>
+				<option value="executive">Executive Suite</option>
+			</select>
+			<input type="submit" value="Reserve">
+		</form>
+	</main>
+	<footer>
+		<p>Please note that submitting a reservation request does not guarantee a reservation. A member of our staff will contact you to confirm your reservation.</p>
+	</footer>
+</body>
+</html>

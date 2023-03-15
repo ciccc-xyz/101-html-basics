@@ -1,0 +1,112 @@
+<!-- ----------------------------------
+     Author: Ivan Malone
+     Company: Wsad.io Technologies Inc
+     Email: ivan.m@wsad.io
+     ---------------------------------
+     Topic: HTML
+     Level: Beginner
+     ---------------------------------
+-->
+
+<!--
+We first defined some CSS rules to style the DOM tree in the explorer. 
+    We used a nested unordered list to represent the tree, 
+    with each node represented by a list item. 
+    
+We used a "▸" symbol before each node name to show the tree structure. 
+    We also added some hover styles to highlight the leaf nodes.
+
+We then defined a JavaScript function called init() that is called when the page loads. 
+    This function gets the root element of the page using document.documentElement, 
+        and then calls a recursive function called traverse() to traverse the entire DOM tree
+         and add each node to the tree view.
+
+The traverse() function takes two parameters: 
+    the current node 
+    and the parent node in the tree view. 
+
+It first creates a list item for the current node, 
+    and then checks if the node has child nodes. 
+    
+If it does, 
+    it creates a nested unordered list 
+        and calls traverse() on each child node. 
+        If the node does not have child nodes, 
+            it adds the "leaf" class to the list item to mark it as a leaf node.
+
+Finally, we added an HTML skeleton with a header and main section, and added an unordered 
+list with the id "tree" to represent the DOM tree in the explorer. 
+
+We also added an onload event to the body tag to call the init() function when the page loads. 
+
+The result is a simple DOM explorer that displays the entire DOM tree of the current page.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM Explorer</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			padding: 20px;
+		}
+		#tree {
+			margin-left: 20px;
+			padding-left: 20px;
+			border-left: 1px solid gray;
+			list-style: none;
+		}
+		#tree li {
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+		#tree li:before {
+			content: "▸";
+			color: gray;
+			margin-right: 5px;
+		}
+		#tree li.leaf:before {
+			content: " ";
+		}
+		#tree li.leaf:hover {
+			background-color: #eee;
+		}
+	</style>
+	<script>
+		function init() {
+			const tree = document.getElementById("tree");
+			const root = document.documentElement;
+			traverse(root, tree);
+		}
+
+		function traverse(node, tree) {
+			const li = document.createElement("li");
+			const text = document.createTextNode(node.nodeName);
+			li.appendChild(text);
+
+			if (node.childNodes.length > 0) {
+				const ul = document.createElement("ul");
+				li.appendChild(ul);
+				for (let i = 0; i < node.childNodes.length; i++) {
+					traverse(node.childNodes[i], ul);
+				}
+			} else {
+				li.classList.add("leaf");
+			}
+
+			tree.appendChild(li);
+		}
+	</script>
+</head>
+<body onload="init()">
+	<header>
+		<h1>DOM Explorer</h1>
+	</header>
+	<main>
+		<section>
+			<h2>DOM Tree</h2>
+			<ul id="tree"></ul>
+		</section>
+	</main>
+</body>
+</html>

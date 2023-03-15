@@ -1,0 +1,36 @@
+<!-- ----------------------------------
+     Author: Ivan Malone
+     Company: Wsad.io Technologies Inc
+     Email: ivan.m@wsad.io
+     ---------------------------------
+     Topic: HTML
+     Level: Beginner
+     ---------------------------------
+
+     Description:    
+     Random Number Example
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Number Generator</title>
+  </head>
+  <body>
+    <!-- This script generates a random number between 1 and 100 -->
+    <script>
+      var number = Math.floor(Math.random() * 100) + 1;
+    </script>
+    <h1>Generated Number:</h1>
+    <!-- This div displays the generated number in a box -->
+    <div style="border: 1px solid black; padding: 10px;">
+      <p>The number is:</p>
+      <!-- This span displays the generated number -->
+      <span id="number-output"></span>
+    </div>
+    <!-- This script sets the text content of the span to the generated number -->
+    <script>
+      document.getElementById("number-output").textContent = number;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!-- ----------------------------------
+     Author: Ivan Malone
+     Company: Wsad.io Technologies Inc
+     Email: ivan.m@wsad.io
+     ---------------------------------
+     Topic: HTML
+     Level: Beginner
+     ---------------------------------
+     A Calculator Created in Steps or Stages
+-->
+<!-- Software is often created in Steps - Here we begin a 'pass' and begin adding 'CSS'-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Calculator</title>
+	<style>
+		form {
+			width: 300px;
+			margin: auto;
+			padding: 20px;
+			border: 2px solid #ccc;
+			border-radius: 5px;
+			box-shadow: 0 0 5px #ccc;
+			background-color: #fff;
+		}
+
+		input[type="text"] {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 10px;
+			font-size: 24px;
+			border: 2px solid #ccc;
+			border-radius: 5px;
+		}
+
+		button {
+			width: 50px;
+			height: 50px;
+			margin: 5px;
+			font-size: 24px;
+			border: none;
+			border-radius: 5px;
+			background-color: #ccc;
+			color: #000;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #999;
+			color: #fff;
+		}
+
+		div {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 10px;
+		}
+
+		button:nth-child(4),
+		button:nth-child(8),
+		button:nth-child(12),
+		button:last-child {
+			background-color: #f00;
+			color: #fff;
+		}
+
+		button:nth-child(4):hover,
+		button:nth-child(8):hover,
+		button:nth-child(12):hover,
+		button:last-child:hover {
+			background-color: #900;
+			color: #fff;
+		}
+	</style>
+	<script>
+		// Get the input field
+		var inputField = document.querySelector('input[type="text"]');
+
+		// Add event listeners to all buttons
+		var buttons = document.querySelectorAll('button');
+		for (var i = 0; i < buttons.length; i++) {
+			buttons[i].addEventListener('click', function(event) {
+				// Get the button value
+				var buttonValue = event.target.innerHTML;
+
+				// Handle each button press appropriately
+				switch (buttonValue) {
+					case 'AC':
+						inputField.value = '';
+						break;
+					case '=':
+						inputField.value = eval(inputField.value);
+						break;
+					default:
+						inputField.value += buttonValue;
+						break;
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<input type="text" placeholder="0">
+		<div>
+			<button>1</button>
+			<button>2</button>
+			<button>3</button>
+			<button>+</button>
+		</div>
+		<div>
+			<button>4</button>
+			<button>5</button>
+			<button>6</button>
+			<button>-</button>
+		</div>
+		<div>
+			<button>7</button>
+			<button>8</button>
+			<button>9</button>
+			<button>*</button>
+		</div>
+		<div>
+			<button>0</button>
+			<button>/</button>
+			<button>AC</button>
+			<button>=</button>
+		</div>
+	</form>
+</body>
+</html>

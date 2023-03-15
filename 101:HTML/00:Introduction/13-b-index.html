@@ -1,0 +1,54 @@
+<!-- ----------------------------------
+     Author: Ivan Malone
+     Company: Wsad.io Technologies Inc
+     Email: ivan.m@wsad.io
+     ---------------------------------
+     Topic: HTML
+     Level: Beginner
+     ---------------------------------
+-->
+<!--
+Summary: HTML as a Markup Language coupled with Javascript as a Programming Language
+
+While HTML is not a programming language, it can be used in conjunction with programming languages like JavaScript
+to create more dynamic and functional web pages.
+
+JavaScript is a programming language that can be used to create interactive web pages. 
+    JavaScript code is contained within HTML tags called script tags. 
+    These script tags tell the browser to execute the JavaScript code contained within them.
+
+For example, you might use JavaScript to create a button on a webpage that changes the color of a paragraph when 
+it's clicked. 
+
+Here's an example of what that might look like:
+
+    <button onclick="document.getElementById('my-paragraph').style.color = 'red'">Click Me!</button>
+    <p id="my-paragraph">This is a paragraph.</p>
+
+In this example, the button tag is used to create a button on the webpage. 
+    The onclick attribute tells the browser to execute the JavaScript code contained within 
+    the quotes when the button is clicked. 
+    
+    In this case, the JavaScript code changes the color of the paragraph with an id of my-paragraph 
+    to red.    
+
+
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Web Page</title>
+  </head>
+  <body>
+    <h1>Welcome to my web page!</h1>
+    <p>This is a paragraph of text.</p>
+    <button onclick="alert('Hello, world!')">Click me</button>
+    <script>
+      // This is a JavaScript function that is executed when the button is clicked
+      function myFunction() {
+        alert("Hello, world!");
+      }
+    </script>
+  </body>
+</html>

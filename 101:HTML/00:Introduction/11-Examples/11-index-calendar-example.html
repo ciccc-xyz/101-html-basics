@@ -1,0 +1,86 @@
+<!-- ----------------------------------
+     Author: Ivan Malone
+     Company: Wsad.io Technologies Inc
+     Email: ivan.m@wsad.io
+     ---------------------------------
+     Topic: HTML
+     Level: Beginner
+     ---------------------------------
+
+     Description:    
+     Basic Calendar Layout Example        
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calendar</title>
+</head>
+<body>
+	<!-- Create a table for the calendar -->
+	<table>
+		<!-- Create a row for the month name -->
+		<tr>
+			<!-- Use colspan to span the entire width of the table with the month name -->
+			<th colspan="7">March 2023</th>
+		</tr>
+		<!-- Create a row for the day names -->
+		<tr>
+			<th>Sun</th>
+			<th>Mon</th>
+			<th>Tue</th>
+			<th>Wed</th>
+			<th>Thu</th>
+			<th>Fri</th>
+			<th>Sat</th>
+		</tr>
+		<!-- Create a row for the first week of the month -->
+		<tr>
+			<td></td> <!-- Leave the first three cells empty to account for the first few days of the month that fall on previous weeks -->
+			<td></td>
+			<td></td>
+			<td>1</td> <!-- Start the actual days of the month on the fourth cell -->
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+		<!-- Create rows for the remaining weeks of the month -->
+		<tr>
+			<td>5</td>
+			<td>6</td>
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+			<td>10</td>
+			<td>11</td>
+		</tr>
+		<tr>
+			<td>12</td>
+			<td>13</td>
+			<td>14</td>
+			<td>15</td>
+			<td>16</td>
+			<td>17</td>
+			<td>18</td>
+		</tr>
+		<tr>
+			<td>19</td>
+			<td>20</td>
+			<td>21</td>
+			<td>22</td>
+			<td>23</td>
+			<td>24</td>
+			<td>25</td>
+		</tr>
+		<tr>
+			<td>26</td>
+			<td>27</td>
+			<td>28</td>
+			<td>29</td>
+			<td>30</td>
+			<td>31</td>
+			<td></td> <!-- Leave the last cell empty to account for the last few days of the month that fall on subsequent weeks -->
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!-- ----------------------------------
+     Author: Ivan Malone
+     Company: Wsad.io Technologies Inc
+     Email: ivan.m@wsad.io
+     ---------------------------------
+     Topic: HTML
+     Level: Beginner
+     ---------------------------------
+
+     Description:    
+     Example HTML ASCII Art - We use Colors here in combination with CSS
+     and we use a tiny bit of javascript to randomize them when the page
+     is refreshed. 
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Button Art Example</title>
+	<style>
+		button {
+			border-radius: 50%;
+			width: 50px;
+			height: 50px;
+			margin: 5px;
+			background-color: blue;
+			border: none;
+			box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.25);
+			cursor: pointer;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			var buttons = document.getElementsByTagName('button');
+			var colors = ['red', 'green', 'yellow'];
+			for (var i = 0; i < buttons.length; i++) {
+				var randomColor = colors[Math.floor(Math.random() * colors.length)];
+				buttons[i].classList.add(randomColor);
+			}
+		}
+	</script>
+</head>
+<body>
+	<button></button>
+	<button></button>
+	<button></button>
+	<br>
+	<button></button>
+	<button></button>
+	<button></button>
+	<br>
+	<button></button>
+	<button></button>
+	<button></button>
+</body>
+</html>

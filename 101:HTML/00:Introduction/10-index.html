@@ -1,0 +1,132 @@
+<!-- ----------------------------------
+     Author: Ivan Malone
+     Company: Wsad.io Technologies Inc
+     Email: ivan.m@wsad.io
+     ---------------------------------
+     Topic: HTML
+     Level: Beginner
+     ---------------------------------
+
+     Description:    
+     Most Basic Website possible
+        -   but it's missing quote alot.... 
+-->
+
+
+<!-- Rule #1 - Use <!DOCTYPE html>-->
+<!-- Rule #2 - The html tag-->
+<!-- Rule #3 - The Head Tag between html tags-->
+<!-- Rule #4 - The Body Tag after the head tag-->
+<!-- Rule #5 - The Title tag in the Head Tag-->
+<!-- Rule #6 - All Visual Tags in Body -->
+<!-- Rule #7 - H1,H2...H6 are 'Headings', -->        
+<!-- Rule #8 - P is a paragraph,-->        
+<!-- Rule #9 - White Space, Enter Key, New Lines are all Ignore, as are comments!-->
+<!-- Rule #10 - br inserts a line break, it doens't need to be 'terminated'-->
+<!-- Rule #11 - a inserts a link and needs a href attribute with a 'url'-->
+<!-- Rule #12 - <button> inserts a button-->
+<!-- Rule #13 - <input> inserts a input box-->
+<!-- Rule #14 - <section> groups things in a section-->
+<!-- Rule #15 - <div> divides things up-->
+<!-- Rule:#16 - We can specify the 'language' our HTML document represents with various country codes, which
+                we will cover in more detail later. This one sets it to English. It does NOT translate the
+                document but it is useful to tell Search Engines what language this document is presented in. 
+-->
+<!-- Rule #17 - the meta element is another non visual element, it belongs in head and can take different
+                attributes that help to further describe how the program should treat the document, this is especially
+                important for search engines and browsers or archival programs, text readers and accessability devices
+                that use HTML 
+-->
+
+<!-- Rule #18 - Here we add a Description for our Website, this is useful to Google for Example-->            
+<!-- Rule #19 - Here we are defining what is known as the 'character set' for the document.                 
+                Different languages have different symbols, for example, Mandarin and Koren, English and 
+                Arabic, Latin and Greet, we will cover this in ore detail later -->
+
+<!-- Rule #20 - link tag is used linking to other resources, in this case, a css document-->
+<!-- Rule #21 - script tag is used linking to import a script, in this case, a javascript document-->
+<!-- Rule #22 - there are MANY types of tag and tag attribute combinations you can use in the head section and for 
+                many different reasons, not all are used all the time -->
+
+    <!DOCTYPE html>     
+    <html  lang="en">    
+        <head>
+            <!-- Many Tags in Head Section we can use -->
+            <!-- Information Related -->
+            <title>My First Web Page</title>            
+            <meta name="description" content="This is a description of my first website"> 
+
+            <!-- Behaviour Related -->
+            <meta charset="UTF-8">
+
+            <!-- Browser Related -->
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <!-- Design Related -->
+            <link rel="stylesheet" type="text/css" href="styles.css">
+
+            <!-- Programming Related -->
+            <script src="script.js"></script> 
+
+            <!-- This one is useful for Search Engines, Digital Marketing, SEO -->
+            <meta name="keywords" content="keywords">
+
+            <!-- Useful if we want to specify the author of the site, some search engines may use it for example
+                    when displaying blog author along with a title and short description -->
+            <!-- Specify the Author of a Page -->
+            <meta name="author" content="Ivan Malone">
+
+            <!-- Here are examples where we leave instructions for Web Crawlers and Robots that may visit our site -->
+            <!--  Specifies whether search engines should index the page and follow links on the page. -->
+            <meta name="robots" content="index,follow">            
+            <!--  Specifies whether google bot should index the page and follow links on the page. -->
+            <meta name="googlebot" content="index,follow">  
+
+            <!-- This is an example of doing something functional and automation, like, a redirection page -->
+            <!--  Automatically redirects the user to another page after a specified time interval (120 seconds) -->
+            <meta http-equiv="refresh" content="120;url=https://ciccc.xyz/">
+
+            <!-- This is helpfor for mobile devices -->
+            <!-- Specifies that phone numbers should not be detected and turned into links on mobile devices -->
+            <meta name="format-detection" content="telephone=no">
+
+            <!-- THESE ARE APPLE DEVICE SPECIFIC, we can do android and others too-->
+            <!-- Specifies that the web app can run in full-screen mode on iOS devices -->
+            <meta name="apple-mobile-web-app-capable" content="yes">
+            <!--  Specifies the style of the status bar in the web app on iOS devices. -->
+            <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        </head> 
+        
+        <body>
+            <h1>First Website Ever Created in HTML:</h1>        
+            <p>This document is still available for download!</p>
+            
+            <br> 
+            <a href="http://info.cern.ch/hypertext/WWW/TheProject.html"></a>
+    
+            <div> 
+                              
+            <section>
+                <h2>Section Title</h2>
+                <p>Section Description</p>
+            </section>
+    
+            <section>
+                <h2>Button Section</h2> 
+                <p>A Button</p>
+                <button>Hello World!</button>
+            </section>
+    
+            <section>
+                <h2>Input Section</h2>
+                <p>A Input</p>
+                <input>Type Here</input>
+            </section>        
+            </div>
+        </body>
+    </html>
+    
+    <!--    
+     
+    -->
+    

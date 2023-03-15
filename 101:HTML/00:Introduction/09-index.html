@@ -1,0 +1,97 @@
+<!-- ----------------------------------
+     Author: Ivan Malone
+     Company: Wsad.io Technologies Inc
+     Email: ivan.m@wsad.io
+     ---------------------------------
+     Topic: HTML
+     Level: Beginner
+     ---------------------------------
+
+     Description:    
+     Most Basic Website possible
+        -   but it's missing quote alot.... 
+-->
+
+
+<!-- Rule #1 - Use <!DOCTYPE html>-->
+<!-- Rule #2 - The html tag-->
+<!-- Rule #3 - The Head Tag between html tags-->
+<!-- Rule #4 - The Body Tag after the head tag-->
+<!-- Rule #5 - The Title tag in the Head Tag-->
+<!-- Rule #6 - All Visual Tags in Body -->
+<!-- Rule #7 - H1,H2...H6 are 'Headings', -->        
+<!-- Rule #8 - P is a paragraph,-->        
+<!-- Rule #9 - White Space, Enter Key, New Lines are all Ignore, as are comments!-->
+<!-- Rule #10 - br inserts a line break, it doens't need to be 'terminated'-->
+<!-- Rule #11 - a inserts a link and needs a href attribute with a 'url'-->
+<!-- Rule #12 - <button> inserts a button-->
+<!-- Rule #13 - <input> inserts a input box-->
+<!-- Rule #14 - <section> groups things in a section-->
+<!-- Rule #15 - <div> divides things up-->
+    <!DOCTYPE html> 
+
+    <!-- Rule: 16 - We can specify the 'language' our HTML document represents with various country codes, which
+                    we will cover in more detail later. This one sets it to English. It does NOT translate the
+                    document but it is useful to tell Search Engines what language this document is presented in. 
+    -->
+    <html  lang="en">    
+        <head>
+            <title>My First Web Page</title>
+            <!-- Rule #17 - the meta element is another non visual element, it belongs in head and can take different
+                attributes that help to further describe how the program should treat the document, this is especially
+                important for search engines and browsers or archival programs, text readers and accessability devices
+                that use HTML 
+            -->
+            
+            <!-- Rule #18 - Here we add a Description for our Website, this is useful to Google for Example-->            
+            <meta name="description" content="This is a description of my first website"> 
+            <!---Rule #19 - Here we are defining what is known as the 'character set' for the document.                 
+                Different languages have different symbols, for example, Mandarin and Koren, English and 
+                Arabic, Latin and Greet, we will cover this in ore detail later -->
+            <meta charset="UTF-8">
+
+            <!-- Here are even more tags that are used inside the 'Head' of the HTML document that are non visual but
+                provide important information to the browser or program on how to deal with this document. Not all
+                need to be used all the time but it makes good practice to include them and also makes sure that your
+                document (especially in web browsers) continues to behave as you want and expect it to. Some are used
+                to override the 'default' behaviour of most browser, while others, are for SEO purposes, each have
+                their use - which we will cover later
+            -->
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- sets the width to width of browser window and scale to 1.0 -->
+            <link rel="stylesheet" type="text/css" href="styles.css"> <!-- is used to important a CSS stylesheet, we will cover this later -->
+            <script src="script.js"></script> <!-- is used to import a script, in this case, a javascript file, we'll cover this later -->
+        </head> 
+        
+        <body>
+            <h1>First Website Ever Created in HTML:</h1>        
+            <p>This document is still available for download!</p>
+            
+            <br> 
+            <a href="http://info.cern.ch/hypertext/WWW/TheProject.html"></a>
+    
+            <div> 
+                              
+            <section>
+                <h2>Section Title</h2>
+                <p>Section Description</p>
+            </section>
+    
+            <section>
+                <h2>Button Section</h2> 
+                <p>A Button</p>
+                <button>Hello World!</button>
+            </section>
+    
+            <section>
+                <h2>Input Section</h2>
+                <p>A Input</p>
+                <input>Type Here</input>
+            </section>        
+            </div>
+        </body>
+    </html>
+    
+    <!--    
+
+    -->
+    

@@ -1,0 +1,82 @@
+<!-- ----------------------------------
+     Author: Ivan Malone
+     Company: Wsad.io Technologies Inc
+     Email: ivan.m@wsad.io
+     ---------------------------------
+     Topic: HTML
+     Level: Beginner
+     ---------------------------------
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Browser Detection</title>
+	<script>
+		// Detect browser name and version
+		var userAgent = navigator.userAgent;
+		var browserName = "";
+		var browserVersion = "";
+
+		if (userAgent.indexOf("Opera") >= 0 || userAgent.indexOf("OPR") >= 0 ) {
+		    browserName = "Opera";
+		    browserVersion = userAgent.indexOf("Version") != -1 ? userAgent.substring(userAgent.indexOf("Version")+8) : userAgent.substring(userAgent.indexOf("OPR")+4);
+		}
+		else if (userAgent.indexOf("Edg") != -1) {
+		    browserName = "Microsoft Edge";
+		    browserVersion = userAgent.substring(userAgent.indexOf("Edg")+4);
+		}
+		else if (userAgent.indexOf("Chrome") != -1) {
+		    browserName = "Google Chrome";
+		    browserVersion = userAgent.substring(userAgent.indexOf("Chrome")+7);
+		}
+		else if (userAgent.indexOf("Safari") != -1) {
+		    browserName = "Apple Safari";
+		    browserVersion = userAgent.substring(userAgent.indexOf("Safari")+7);
+		    if (userAgent.indexOf("Version") != -1) {
+		        browserVersion = userAgent.substring(userAgent.indexOf("Version")+8);
+		    }
+		}
+		else if (userAgent.indexOf("Firefox") != -1) {
+		    browserName = "Mozilla Firefox";
+		    browserVersion = userAgent.substring(userAgent.indexOf("Firefox")+8);
+		}
+		else {
+		    browserName = "Unknown browser";
+		    browserVersion = "N/A";
+		}
+
+		// Display browser name and version in HTML
+		window.onload = function() {
+			document.getElementById("browser-info").innerHTML = "You are using " + browserName + " " + browserVersion;
+		}
+	</script>
+	<style>
+		.container {
+			margin: 50px auto;
+			padding: 20px;
+			max-width: 800px;
+			background-color: #f2f2f2;
+			border: 1px solid #ddd;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+			font-family: Arial, sans-serif;
+		}
+		h1 {
+			margin-top: 0;
+			font-size: 28px;
+			text-align: center;
+		}
+		p {
+			margin-bottom: 10px;
+			font-size: 16px;
+			line-height: 1.6;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Browser Detection</h1>
+		<p id="browser-info"></p>
+	</div>
+</body>
+</html>
